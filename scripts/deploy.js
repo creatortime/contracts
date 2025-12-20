@@ -1,20 +1,18 @@
 async function main() {
   const [deployer] = await ethers.getSigners();
-  console.log("Deploying contracts with account:", deployer.address);
-  
+  console.log("Деплой с аккаунта:", deployer.address);
+
   const CreatorToken = await ethers.getContractFactory("CreatorToken");
-  const creatorToken = await CreatorToken.deploy();
+  const contract = await CreatorToken.deploy();
+
+  await contract.waitForDeployment();
+  const address = await contract.getAddress();
   
-  await creatorToken.deployed();
-  
-  console.log("✅ CreatorToken deployed to:", creatorToken.address);
-  console.log("📝 Token Name:", await creatorToken.name());
-  console.log("🔤 Token Symbol:", await creatorToken.symbol());
+  console.log("✅ Контракт задеплоен по адресу:", address);
+  console.log("🔗 Проверить: https://mumbai.polygonscan.com/address/" + address);
 }
 
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
+main().catch((error) => {
+  console.error(error);
+  process.exit(1);
+});
