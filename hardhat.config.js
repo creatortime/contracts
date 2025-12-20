@@ -15,7 +15,7 @@ module.exports = {
     mumbai: {
       // === ВАРИАНТЫ RPC (РАСКОММЕНТИРУЙТЕ ОДИН!) ===
       // Основной вариант:
-      url: "https://polygon-testnet.public.blastapi.io",
+      url: "https://polygon-mumbai-bor.publicnode.com/",
       
       // Альтернативные, если основной не работает:
       // url: "https://polygon-mumbai.gateway.tenderly.co",
