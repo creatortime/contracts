@@ -1,24 +1,12 @@
 require("@nomicfoundation/hardhat-toolbox");
-require("dotenv").config();
+require("dotenv").config(); // Эта строка критически важна
 
 module.exports = {
-  solidity: {
-    version: "0.8.19",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200
-      }
-    }
-  },
+  solidity: "0.8.19",
   networks: {
-    localhost: {
-      url: "http://127.0.0.1:8545"
-    },
-   mumbai: {
-  url: "https://rpc-mumbai.maticvigil.com",
-  accounts: [`0x${process.env.PRIVATE_KEY}`] // Ключ из .env файла
-}
+    mumbai: {
+      url: "https://polygon-mumbai-bor.publicnode.com", // Рабочий RPC
+      accounts: [`0x${process.env.PRIVATE_KEY}`] // Добавляем 0x здесь
     }
   }
 };
