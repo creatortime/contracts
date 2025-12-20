@@ -12,12 +12,9 @@ module.exports = {
     }
   },
  networks: {
-  amoy: { // Заменили "mumbai" на "amoy"
-    url: "https://rpc-amoy.polygon.technology", // Официальный RPC от Polygon
+  sepolia: {
+    url: "https://ethereum-sepolia.publicnode.com", // Надёжный публичный RPC
     accounts: [`0x${process.env.PRIVATE_KEY}`]
-  },
-    localhost: {
-      url: "http://127.0.0.1:8545"
-    }
+  }
   }
 };
