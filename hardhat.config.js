@@ -11,19 +11,11 @@ module.exports = {
       }
     }
   },
-  networks: {
-    mumbai: {
-      // === ВАРИАНТЫ RPC (РАСКОММЕНТИРУЙТЕ ОДИН!) ===
-      // Основной вариант:
-      url: "https://polygon-mumbai-bor.publicnode.com/",
-      
-      // Альтернативные, если основной не работает:
-      // url: "https://polygon-mumbai.gateway.tenderly.co",
-      // url: "https://rpc.ankr.com/polygon_mumbai",
-      // url: "https://polygon-mumbai-bor.publicnode.com",
-      
-      accounts: [`0x${process.env.PRIVATE_KEY}`]
-    },
+ networks: {
+  amoy: { // Заменили "mumbai" на "amoy"
+    url: "https://rpc-amoy.polygon.technology", // Официальный RPC от Polygon
+    accounts: [`0x${process.env.PRIVATE_KEY}`]
+  },
     localhost: {
       url: "http://127.0.0.1:8545"
     }
